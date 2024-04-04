@@ -1,32 +1,36 @@
-dict={}
-while(1):
+TASKS = {}
+
+while True:
     print("TO DO LIST APPLICATION:")
-    print("1.Add a new task")
-    print("2.Remove a task")
-    print("3.Mark a task as complete")
-    print("4. view all task")
-    print("5.Exit")
-    choice=int(input("Choose any one option:"))
-    if(choice==1):
-        newtask=input("Enter the name of the task:")
-        dict[newtask]="not completed"
-        print("new task added")
-    elif(choice==2):
-        removetask=input("enter the name of the task to be removed")
-        if removetask in dict:
-            dict.pop(removetask)
+    print("1. Add a new task")
+    print("2. Remove a task")
+    print("3. Mark a task as complete")
+    print("4. View all tasks")
+    print("5. Exit")
+    
+    choice = int(input("Choose any one option: "))
+    
+    if choice == 1:
+        new = input("Enter the name of the task: ")
+        TASKS[new] = "not completed"
+        print("New task added")
+    elif choice == 2:
+        remove = input("Enter the name of the task to be removed: ")
+        if remove in TASKS:
+            TASKS.pop(remove)
+            print("task is removed !")
         else:
-            print("oops, task is not found")
-    elif(choice==3):
-        completedtask=input("enter the task to mark as completed:")
-        if completedtask in dict:
-            dict[completedtask]="completed"
-            print("task marked as completed")
+            print("Oops, task is not found")
+    elif choice == 3:
+        completed = input("Enter the task to mark as completed: ")
+        if completed in TASKS:
+            TASKS[completed] = "completed"
+            print("Task marked as completed")
         else:
-            print("oops, task is not found")
-    elif(choice==4):
-        print(dict)
-    elif(choice==5):
+            print("Oops, task is not found")
+    elif choice == 4:
+        print(TASKS)
+    elif choice == 5:
         break
     else:
-        print("invalid choice")    
+        print("Invalid choice")
