@@ -1,33 +1,34 @@
 TASKS = {}
 while True:
-    print("TO DO LIST APPLICATION:")
-    print("1. Add a new task")
-    print("2. Remove a task")
-    print("3. Mark a task as complete")
-    print("4. View all tasks")
-    print("5. Exit")
-    choice = int(input("Choose any one option: "))
+    print("Welcome to Your Productivity Oasis:")
+    print("1. Plant a New Task Seed 🌱")
+    print("2. Uproot a Task 🚜")
+    print("3. Blossom a Completed Task 🌸")
+    print("4. Explore Your Task Garden 🌿")
+    print("5. Exit Your Oasis 🏝️")
+    choice = int(input("Choose a Path to Wander: "))
     if choice == 1:
-        new = input("Enter the name of the task: ")
+        new = input("Enter the name of the task you wish to plant: ")
         TASKS[new] = "not completed"
-        print("New task added")
+        print("A new task seed has been planted!")
     elif choice == 2:
-        remove = input("Enter the name of the task to be removed: ")
+        remove = input("Enter the name of the task you wish to uproot: ")
         if remove in TASKS:
             TASKS.pop(remove)
-            print("The Specified Task is Removed!")
+            print("The specified task has been uprooted!")
         else:
-            print("Oops, task is not found")
+            print("Alas, the task cannot be found in this fertile soil.")
     elif choice == 3:
-        completed = input("Enter the task to mark as completed: ")
+        completed = input("Enter the task you'd like to see blossom: ")
         if completed in TASKS:
             TASKS[completed] = "completed"
-            print("Task marked as completed")
+            print("Task successfully blossomed!")
         else:
-            print("Oops, task is not found")
+            print("Oh no, it seems that task isn't rooted in this garden.")
     elif choice == 4:
+        print("Behold, Your Task Garden Flourishes:")
         print(TASKS)
     elif choice == 5:
         break
     else:
-        print("Invalid choice")
+        print("Your compass spins confusedly. Please choose a valid path.")
