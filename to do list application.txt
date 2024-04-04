@@ -1,5 +1,4 @@
 TASKS = {}
-
 while True:
     print("TO DO LIST APPLICATION:")
     print("1. Add a new task")
@@ -7,9 +6,7 @@ while True:
     print("3. Mark a task as complete")
     print("4. View all tasks")
     print("5. Exit")
-    
     choice = int(input("Choose any one option: "))
-    
     if choice == 1:
         new = input("Enter the name of the task: ")
         TASKS[new] = "not completed"
@@ -18,7 +15,7 @@ while True:
         remove = input("Enter the name of the task to be removed: ")
         if remove in TASKS:
             TASKS.pop(remove)
-            print("task is removed !")
+            print("The Specified Task is Removed!")
         else:
             print("Oops, task is not found")
     elif choice == 3:
